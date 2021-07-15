@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.color-item {
+  margin-right: 4px;
+  margin-bottom: 4px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.color-item.selected {
+  border: 1px solid black;
+}
+
+.color-item.small {
+  width: 25px;
+  height: 25px;
+}
+
+.color-item.disabled {
+  pointer-events: none;
+  cursor: default;
+}

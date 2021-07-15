@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Stencil Component Starter</title>
+
+  <script type="module" src="/build/t3n.esm.js"></script>
+  <script nomodule src="/build/t3n.js"></script>
+</head>
+
+<style>
+  planb-color-picker::part(item) {
+    width: 60px;
+    height: 60px;
+  }
+</style>
+
+<body>
+  <div style="width: 200px">
+    <planb-color-picker id="picker1"></planb-color-picker>
+    <planb-color-picker id="picker3" dark="true" disabled="true"></planb-color-picker>
+    <planb-color-picker id="picker2" disabled="true"></planb-color-picker>
+  </div>
+
+  <script>
+    const picker1 = document.getElementById('picker1');
+    picker1.addEventListener('colorSelected', (e) => console.log('🎉', 'Picker 1', e));
+
+    const picker2 = document.getElementById('picker2');
+    picker2.addEventListener('colorSelected', (e) => console.log('🎉', 'Picker 2', e));
+
+  </script>
+</body>
+
+</html>
