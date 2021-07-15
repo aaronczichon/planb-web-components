@@ -20,6 +20,12 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface PbChip {
+        "clickable": boolean;
+        "disabled": boolean;
+    }
+    interface PbChips {
+    }
     interface PlanbColorPicker {
         "customColorCode": string;
         "customColorName": string;
@@ -35,6 +41,18 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLPbChipElement extends Components.PbChip, HTMLStencilElement {
+    }
+    var HTMLPbChipElement: {
+        prototype: HTMLPbChipElement;
+        new (): HTMLPbChipElement;
+    };
+    interface HTMLPbChipsElement extends Components.PbChips, HTMLStencilElement {
+    }
+    var HTMLPbChipsElement: {
+        prototype: HTMLPbChipsElement;
+        new (): HTMLPbChipsElement;
+    };
     interface HTMLPlanbColorPickerElement extends Components.PlanbColorPicker, HTMLStencilElement {
     }
     var HTMLPlanbColorPickerElement: {
@@ -43,6 +61,8 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "pb-chip": HTMLPbChipElement;
+        "pb-chips": HTMLPbChipsElement;
         "planb-color-picker": HTMLPlanbColorPickerElement;
     }
 }
@@ -61,6 +81,12 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface PbChip {
+        "clickable"?: boolean;
+        "disabled"?: boolean;
+    }
+    interface PbChips {
+    }
     interface PlanbColorPicker {
         "customColorCode"?: string;
         "customColorName"?: string;
@@ -71,6 +97,8 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "pb-chip": PbChip;
+        "pb-chips": PbChips;
         "planb-color-picker": PlanbColorPicker;
     }
 }
@@ -79,6 +107,8 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "pb-chip": LocalJSX.PbChip & JSXBase.HTMLAttributes<HTMLPbChipElement>;
+            "pb-chips": LocalJSX.PbChips & JSXBase.HTMLAttributes<HTMLPbChipsElement>;
             "planb-color-picker": LocalJSX.PlanbColorPicker & JSXBase.HTMLAttributes<HTMLPlanbColorPickerElement>;
         }
     }
